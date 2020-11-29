@@ -1,18 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int CurrScore { get; private set; }
+    private AudioSource source;
+    private static Text ScoreText;
+    
     void Start()
     {
-        
+        ScoreText = GetComponent<Text>();
+        source = GetComponent<AudioSource>();
+        CurrScore = 0;
+        UpdateScore();
     }
 
-    // Update is called once per frame
-    void Update()
+    void UpdateScore()
     {
-        
+        ScoreText.text = string.Format("Score: {0}", CurrScore);
+    }
+
+    public void IncrementScore()
+    {
+        CurrScore += 1;
+        UpdateScore();
     }
 }

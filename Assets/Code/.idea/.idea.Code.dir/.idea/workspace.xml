@@ -1,12 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="17d9007d-4bc7-460e-8d52-7d6bc586f718" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Game.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sounds.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sounds/beep_5.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sounds/beep_5.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sounds/coin_4.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sounds/coin_4.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CREDITS.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ASSETS.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Code.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Code.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ball.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SceneManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SceneManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ScoreManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScoreManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/ScoreManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/Level 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ArtifactDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/InspectorExpandedItems.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/SourceAssetDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/StateCache/Hierarchy/322e8d-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/StateCache/Hierarchy/322e8d-mainStage.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,22 +52,30 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/ScoreManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ball.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Game.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/SceneManager.cs" />
+        <option value="$PROJECT_DIR$/ScoreManager.cs" />
+        <option value="$PROJECT_DIR$/Game.cs" />
         <option value="$PROJECT_DIR$/Ball.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1kyykFCrOtVEXtUE4jiJmJyUmjB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -45,7 +88,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606687271405</updated>
-      <workItem from="1606687278000" duration="1460000" />
+      <workItem from="1606687278000" duration="4007000" />
     </task>
     <servers />
   </component>
@@ -54,7 +97,19 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>
