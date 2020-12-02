@@ -30,6 +30,10 @@ public class Ball : MonoBehaviour
     void Update()
     {
         OutOfBoundsCheck();
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Game.Ctx.UI.ShowPauseMenu();
+        }
         if (Input.GetMouseButtonDown(0)) {
             startPos = Input.mousePosition;
         }
@@ -47,8 +51,8 @@ public class Ball : MonoBehaviour
         if (rb.position.x > RightBound || rb.position.x < LeftBound ||
             rb.position.y > TopBound || rb.position.y < BottomBound)
         {
-            Debug.Log("end game");
-            //TODO show restart menu, end game
+            Debug.Log("out of bounds");
+            //TODO bounce ball off walls
         }
     }
 
