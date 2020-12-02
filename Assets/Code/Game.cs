@@ -6,15 +6,40 @@ public class Game : MonoBehaviour
 {
     public static Game Ctx;
     public static ScoreManager Score;
+    public UIManager UI;
     
-    void Start()
+    internal void Start()
     {
         Ctx = this;
-        Score = GameObject.Find("ScoreText").GetComponent<ScoreManager>();
+        UI = new UIManager();
+        UI.ShowStartMenu();
+        Time.timeScale = 0f;
+        Score = GameObject.Find("Score Text").GetComponent<ScoreManager>();
     }
 
-    void Update()
+    public void QuitGame()
     {
-        
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+    }
+
+    public void StartGame()
+    {
+        Time.timeScale = 1f;
+        UI.HideStartMenu();
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        UI.HidePauseMenu();
+    }
+
+    public void RestartGame()
+    {
+        // TODO: go back to level 1
+        UnityEditor.EditorApplication.isPlaying = true;
+        Time.timeScale = 1f;
+        UI.HideRestartMenu();
     }
 }
