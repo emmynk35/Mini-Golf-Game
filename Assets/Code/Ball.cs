@@ -13,6 +13,7 @@ public class Ball : MonoBehaviour
     private Vector2 endPos;
     private Vector2 direction;
     private AudioSource source;
+	private SpriteRenderer sr;
     
     void Start()
     {
@@ -25,10 +26,17 @@ public class Ball : MonoBehaviour
         LeftBound = cam.ScreenToWorldPoint(bl).x;
         rb = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
+		sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
+		if (rb.velocity.x > 0.1f || rb.velocity.y > 0.1f)
+		{
+			sr.color = Color.red;
+			return;
+		}
+		sr.color = Color.white;
         OutOfBoundsCheck();
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -43,6 +51,7 @@ public class Ball : MonoBehaviour
             rb.isKinematic = false;
             rb.AddForce(direction * 5f);
             source.PlayOneShot(source.clip, 1f);
+			Game.Score.IncrementScore();
         }
     }
 
@@ -61,9 +70,8 @@ public class Ball : MonoBehaviour
         var gameType = other.gameObject;
         if (gameType.GetComponent<Hole>())
         {
-            Game.Score.IncrementScore();
             Debug.Log("ball in hole"); 
-            //TODO increase score, move on to next level
+            //TODO move on to next level
         }
     }
 }

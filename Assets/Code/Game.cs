@@ -12,8 +12,8 @@ public class Game : MonoBehaviour
     {
         Ctx = this;
         UI = new UIManager();
-        UI.ShowStartMenu();
         Time.timeScale = 0f;
+        UI.ShowStartMenu();
         Score = GameObject.Find("Score Text").GetComponent<ScoreManager>();
     }
 
@@ -25,8 +25,8 @@ public class Game : MonoBehaviour
 
     public void StartGame()
     {
-        Time.timeScale = 1f;
         UI.HideStartMenu();
+        Time.timeScale = 1f;
     }
 
     public void ResumeGame()

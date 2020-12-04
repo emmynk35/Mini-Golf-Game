@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17d9007d-4bc7-460e-8d52-7d6bc586f718" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Code.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Code.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ball.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ScoreManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ArtifactDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/ArtifactDB-lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ArtifactDB-lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/2a/2accb379d137fbe137449518844c3f54" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/32/323aa4e95366bb5ddef617fdf7c0e510" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/56/56bfa313e6c0017d66cbd73e238534e4" beforeDir="false" />
@@ -41,6 +45,7 @@
       <change beforePath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler1.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler1.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler2.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Self assessment.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Self assessment.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Temp/UnityTempFile-0c9299d4dd00041e2912192af8c6b49d" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Temp/UnityTempFile-159db4ddb32eb4d45ae3a388d7fea74c" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Temp/UnityTempFile-1d04e66691f7342ad960147bda3c02c3" beforeDir="false" />
@@ -92,7 +97,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/UIManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ScoreManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ball.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Game.cs" root0="SKIP_HIGHLIGHTING" />
@@ -101,10 +106,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/SceneManager.cs" />
-        <option value="$PROJECT_DIR$/ScoreManager.cs" />
         <option value="$PROJECT_DIR$/Menus/UIManager.cs" />
         <option value="$PROJECT_DIR$/Menus/StartMenu.cs" />
         <option value="$PROJECT_DIR$/UIManager.cs" />
+        <option value="$PROJECT_DIR$/ScoreManager.cs" />
         <option value="$PROJECT_DIR$/Game.cs" />
         <option value="$PROJECT_DIR$/Ball.cs" />
       </list>
@@ -133,7 +138,8 @@
       <option name="presentableId" value="Default" />
       <updated>1606687271405</updated>
       <workItem from="1606687278000" duration="4007000" />
-      <workItem from="1606884872605" duration="4209000" />
+      <workItem from="1606884872605" duration="4454000" />
+      <workItem from="1607044812606" duration="1867000" />
     </task>
     <servers />
   </component>
