@@ -8,10 +8,12 @@ public class ScoreManager : MonoBehaviour
     public int CurrScore { get; private set; }
     private AudioSource source;
     private static Text ScoreText;
+    private static Text BestScoreText;
     
     void Start()
     {
-        ScoreText = GetComponent<Text>();
+        ScoreText = GameObject.Find("Score Text").GetComponent<Text>();
+        BestScoreText = GameObject.Find("Best Score Text").GetComponent<Text>();
         source = GetComponent<AudioSource>();
         CurrScore = 0;
         UpdateScore();
