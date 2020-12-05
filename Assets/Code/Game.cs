@@ -1,20 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
     public static Game Ctx;
     public static ScoreManager Score;
     public UIManager UI;
+    public Ball ball;
+    public static int level = 0;
+    public static string[] Levels = new string[] {"Level 1", "Level 2", "Level 3", "Level 4", "Level 5"};
     
     internal void Start()
     {
+        //DontDestroyOnLoad(transform.gameObject);
+        Debug.Log("New Game");
         Ctx = this;
         UI = new UIManager();
         Time.timeScale = 0f;
-        UI.ShowStartMenu();
         Score = GameObject.Find("Score Text").GetComponent<ScoreManager>();
+        ball = GameObject.Find("Ball").GetComponent<Ball>();
+        if (level == 0) {
+            UI.ShowStartMenu();
+        } 
+    }
+
+    public void NextLevel()
+    {
+        level += 1;
+        if (level == 5) {
+            UI.ShowRestartMenu();
+        } else {
+            Debug.Log("load new scene");
+            SceneManager.LoadScene(Levels[level]);
+        }
     }
 
     public void QuitGame()
@@ -32,7 +52,7 @@ public class Game : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1f;
-        UI.HidePauseMenu();
+        UI.HidePauseMenu(); 
     }
 
     public void RestartGame()

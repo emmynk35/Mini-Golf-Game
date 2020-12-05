@@ -109,9 +109,9 @@
         <option value="$PROJECT_DIR$/Menus/UIManager.cs" />
         <option value="$PROJECT_DIR$/Menus/StartMenu.cs" />
         <option value="$PROJECT_DIR$/UIManager.cs" />
-        <option value="$PROJECT_DIR$/ScoreManager.cs" />
-        <option value="$PROJECT_DIR$/Game.cs" />
         <option value="$PROJECT_DIR$/Ball.cs" />
+        <option value="$PROJECT_DIR$/Game.cs" />
+        <option value="$PROJECT_DIR$/ScoreManager.cs" />
       </list>
     </option>
   </component>
@@ -139,7 +139,7 @@
       <updated>1606687271405</updated>
       <workItem from="1606687278000" duration="4007000" />
       <workItem from="1606884872605" duration="4454000" />
-      <workItem from="1607044812606" duration="1867000" />
+      <workItem from="1607044812606" duration="1985000" />
     </task>
     <servers />
   </component>
