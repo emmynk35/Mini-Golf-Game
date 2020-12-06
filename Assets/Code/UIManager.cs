@@ -15,8 +15,10 @@ public class UIManager
 
     public void ShowStartMenu()
     {
+        Debug.Log("Start Menu shown");
         _start = new StartMenu();
         _start.Show();
+        Time.timeScale = 0f;
     }
 
     public void ShowPauseMenu()

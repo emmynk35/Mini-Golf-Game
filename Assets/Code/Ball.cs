@@ -14,6 +14,10 @@ public class Ball : MonoBehaviour
     private Vector2 direction;
     private AudioSource source;
 	private SpriteRenderer sr;
+    private bool mouseOnUIObject;
+    private float circleSize;
+    private float d_time;
+    private Vector3 lastPos;
     
     void Start()
     {
@@ -27,51 +31,77 @@ public class Ball : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
 		sr = GetComponent<SpriteRenderer>();
+        circleSize = GetComponent<CircleCollider2D>().radius;
+        lastPos = rb.position;
+    }
+
+    void FixedUpdate () {
+        OutOfBoundsCheck();
     }
 
     void Update()
     {
-		if (rb.velocity.x > 0.1f || rb.velocity.y > 0.1f)
-		{
-			sr.color = Color.red;
-			return;
-		}
-		sr.color = Color.white;
-        OutOfBoundsCheck();
-        if (Input.GetKeyDown(KeyCode.P))
+        Debug.Log(Time.timeScale);
+        mouseOnUIObject = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+        if (Input.GetKeyDown(KeyCode.P) && Time.timeScale == 1f)
         {
             Game.Ctx.UI.ShowPauseMenu();
         }
-        if (Input.GetMouseButtonDown(0)) {
+		if (rb.velocity.magnitude > 0.2f)
+		{
+			sr.color = Color.red;
+			return;
+		} else {
+            lastPos = rb.position;
+        }
+		sr.color = Color.white;
+        if (Input.GetMouseButtonDown(0) && !mouseOnUIObject) {
             startPos = Input.mousePosition;
         }
-        if (Input.GetMouseButtonUp (0)) {
+        if (Input.GetMouseButtonUp(0) && !mouseOnUIObject) {
             endPos = Input.mousePosition;
             direction = startPos - endPos;
             rb.isKinematic = false;
             rb.AddForce(direction * 5f);
             source.PlayOneShot(source.clip, 1f);
-			Game.Score.IncrementScore();
+            Game.Score.IncrementScore();
         }
     }
 
     void OutOfBoundsCheck()
     {
-        if (rb.position.x > RightBound || rb.position.x < LeftBound ||
-            rb.position.y > TopBound || rb.position.y < BottomBound)
+        if (rb.position.x >= RightBound) {
+            rb.velocity = Vector3.Reflect(rb.velocity, Vector3.left);
+        } else if (rb.position.x <= LeftBound) {
+            rb.velocity = Vector3.Reflect(rb.velocity, Vector3.right);
+        } else if (rb.position.y >= TopBound) {
+            rb.velocity = Vector3.Reflect(rb.velocity, Vector3.down);
+        } else if (rb.position.y <= BottomBound) {
+            rb.velocity = Vector3.Reflect(rb.velocity, Vector3.up);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        var gameType = other.gameObject;
+        if (gameType.GetComponent<Hole>())
         {
-            Debug.Log("out of bounds");
-            //TODO bounce ball off walls
+            RaycastHit2D hit = Physics2D.CircleCast(rb.position, (circleSize * 0.1f), rb.velocity, 0.1f);
+            if (hit) {
+                Game.Ctx.NextLevel();
+                Destroy(gameObject);
+            }
         }
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        var gameType = other.gameObject;
-        if (gameType.GetComponent<Hole>())
-        {
-            Debug.Log("ball in hole"); 
-            //TODO move on to next level
+        if (other.gameObject.tag == "Water") {
+            Debug.Log("Splash");
+            //gameType.PlaySplash();play sound from the water object
+            Game.Score.IncrementScore();
+            rb.position = lastPos;
+            rb.velocity = Vector3.zero;
         }
     }
 }
