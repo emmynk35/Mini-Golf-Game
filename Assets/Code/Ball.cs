@@ -17,6 +17,7 @@ public class Ball : MonoBehaviour
     private bool mouseOnUIObject;
     private float circleSize;
     private float d_time;
+    private Vector3 lastPos;
     
     void Start()
     {
@@ -31,6 +32,7 @@ public class Ball : MonoBehaviour
         source = GetComponent<AudioSource>();
 		sr = GetComponent<SpriteRenderer>();
         circleSize = GetComponent<CircleCollider2D>().radius;
+        lastPos = rb.position;
     }
 
     void FixedUpdate () {
@@ -39,18 +41,20 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(Time.timeScale);
         mouseOnUIObject = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && Time.timeScale == 1f)
         {
             Game.Ctx.UI.ShowPauseMenu();
         }
-		if (!rb.velocity.Equals(Vector3.zero))
+		if (rb.velocity.magnitude > 0.2f)
 		{
 			sr.color = Color.red;
 			return;
-		}
+		} else {
+            lastPos = rb.position;
+        }
 		sr.color = Color.white;
-
         if (Input.GetMouseButtonDown(0) && !mouseOnUIObject) {
             startPos = Input.mousePosition;
         }
@@ -87,6 +91,17 @@ public class Ball : MonoBehaviour
                 Game.Ctx.NextLevel();
                 Destroy(gameObject);
             }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Water") {
+            Debug.Log("Splash");
+            //gameType.PlaySplash();play sound from the water object
+            Game.Score.IncrementScore();
+            rb.position = lastPos;
+            rb.velocity = Vector3.zero;
         }
     }
 }

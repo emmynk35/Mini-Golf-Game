@@ -18,7 +18,7 @@ public class Game : MonoBehaviour
         Debug.Log("New Game");
         Ctx = this;
         UI = new UIManager();
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
         Score = GameObject.Find("Score Text").GetComponent<ScoreManager>();
         ball = GameObject.Find("Ball").GetComponent<Ball>();
         if (level == 0) {
