@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4736128989800881396}
   - component: {fileID: 4736128989800881397}
   - component: {fileID: 4736128989800881402}
-  - component: {fileID: 4736128989800881403}
+  - component: {fileID: 6550656009373359065}
   m_Layer: 0
   m_Name: Hole
   m_TagString: Untagged
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &4736128989800881403
+--- !u!114 &6550656009373359065
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

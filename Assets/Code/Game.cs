@@ -11,17 +11,17 @@ public class Game : MonoBehaviour
     public Ball ball;
     public static int level = 0;
     public static string[] Levels = new string[] {"Level 1", "Level 2", "Level 3", "Level 4", "Level 5"};
-    
+    private bool begin = true;
+   
     internal void Start()
     {
-        //DontDestroyOnLoad(transform.gameObject);
-        Debug.Log("New Game");
         Ctx = this;
         UI = new UIManager();
         Time.timeScale = 1f;
         Score = GameObject.Find("Score Text").GetComponent<ScoreManager>();
         ball = GameObject.Find("Ball").GetComponent<Ball>();
-        if (level == 0) {
+        if (level == 0 && begin) {
+            begin = false;
             UI.ShowStartMenu();
         } 
     }
@@ -32,7 +32,6 @@ public class Game : MonoBehaviour
         if (level == 5) {
             UI.ShowRestartMenu();
         } else {
-            Debug.Log("load new scene");
             SceneManager.LoadScene(Levels[level]);
         }
     }
@@ -57,9 +56,10 @@ public class Game : MonoBehaviour
 
     public void RestartGame()
     {
-        // TODO: go back to level 1
         UnityEditor.EditorApplication.isPlaying = true;
         Time.timeScale = 1f;
         UI.HideRestartMenu();
+        level = -1;
+        NextLevel();
     }
 }

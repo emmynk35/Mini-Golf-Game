@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Water : MonoBehaviour
 {
+    private AudioSource source;
     // Start is called before the first frame update
     void Start()
     {
-        
+        source = gameObject.GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Splash()
     {
-        
+        source.PlayOneShot(source.clip, 1f);
     }
 }

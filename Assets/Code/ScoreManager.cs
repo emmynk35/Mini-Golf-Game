@@ -11,10 +11,10 @@ public class ScoreManager : MonoBehaviour
     private static Text ScoreText;
     private static Text BestScoreText;
     private Text LevelText;
+    public static int BestScore;
     
     void Start()
     {
-        // DontDestroyOnLoad(transform.gameObject);
         ScoreText = GameObject.Find("Score Text").GetComponent<Text>();
         BestScoreText = GameObject.Find("Best Score Text").GetComponent<Text>();
         LevelText = GameObject.Find("Level Score Text").GetComponent<Text>();
@@ -27,6 +27,7 @@ public class ScoreManager : MonoBehaviour
     {
         ScoreText.text = string.Format("Game Score: {0}", CurrScore);
         LevelText.text = string.Format("Level Score: {0}", LevelScore);
+        BestScoreText.text = string.Format("Best (Lowest) Score: {0}", BestScore);
     }
 
     public void IncrementScore()
@@ -34,5 +35,28 @@ public class ScoreManager : MonoBehaviour
         LevelScore += 1;
         CurrScore += 1;
         UpdateScore();
+    }
+
+    public void DecrementScore()
+    {
+        LevelScore -= 1;
+        CurrScore -= 1;
+        UpdateScore();
+    }
+
+    public void SetBestScore(int score)
+    {
+        BestScore = score;
+        BestScoreText.text = string.Format("Best (Lowest) Score: {0}", score);
+    }
+
+    public int GetBestScore()
+    {
+        return BestScore;
+    }
+    
+    public int GetCurrentScore()
+    {
+        return CurrScore;
     }
 }

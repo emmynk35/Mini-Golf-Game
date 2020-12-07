@@ -15,7 +15,6 @@ public class UIManager
 
     public void ShowStartMenu()
     {
-        Debug.Log("Start Menu shown");
         _start = new StartMenu();
         _start.Show();
         Time.timeScale = 0f;
@@ -31,6 +30,7 @@ public class UIManager
     public void ShowRestartMenu()
     {
         _restart = new RestartMenu();
+        _restart.SetScore();
         _restart.Show();
         Time.timeScale = 0f;
     }
@@ -127,6 +127,17 @@ public class UIManager
             {
                 Game.Ctx.RestartGame();
             });
+        }
+
+        public void SetScore()
+        {
+            var score = Game.Score.GetCurrentScore();
+            var o = GameObject.Find("Restart Score").GetComponent<Text>();
+            o.text = string.Format("Game Score: {0}", score);
+            var best = Game.Score.GetBestScore();
+            if (best == 0 || score >= best) {
+                Game.Score.SetBestScore(score);
+            }
         }
     }
 }
